@@ -1,0 +1,40 @@
+{
+  "name": "assignment-1",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./server.js"
+  },
+  "engines": {
+    "node": "^12.18.3",
+    "npm": "^6.0.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "bootstrap": "^4.5.2",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "^4.17.1",
+    "http-errors": "~1.6.3",
+    "jquery": "^3.5.1",
+    "lite-server": "^2.5.4",
+    "mongoose": "^5.10.7",
+    "morgan": "~1.9.1",
+    "popper.js": "^1.16.1",
+    "server": "^1.0.30"
+  },
+  "description": "Assignment-1/Personal Porfolio for COMP 229",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfv-trinity/Personal_Porfolio.git"
+  },
+  "author": "Joseph Volpe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jfv-trinity/Personal_Porfolio/issues"
+  },
+  "homepage": "https://github.com/jfv-trinity/Personal_Porfolio#readme"
+}
