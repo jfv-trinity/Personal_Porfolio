@@ -5,12 +5,25 @@ StudentID: 301118010
 Date: 10/8/2020
 */
 
+
+/* Module dependencies. */
+/*  creates data to pass on to argument fields*/
 let createError = require('http-errors');
+
+/*  express routes*/
 let express = require('express');
+
+/*  sets values for path */
 let path = require('path');
+
+/*  allows the use of cookies */
 let cookieParser = require('cookie-parser');
+
+/* allows logger to exist */
 let logger = require('morgan');
 
+
+/*  creates pathway to files*/
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 
@@ -21,6 +34,10 @@ let mongoose = require('mongoose');
 let DB = require('./DB');
 mongoose.connect(DB.URL, {useNewUrlParser: true, useUnifiedTopology: true});
 
+
+
+
+/* notifies if there is an error with MongoDB/Not relevant for assignment*/
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
