@@ -44,20 +44,7 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Contact', message: 'Contact Me' });
 });
 
-/* GET Movie-List Page */
-router.get('/movie-list', function(req, res, next) {
 
-  Movie.Model.find((err, data) =>{
-    if(err)
-    {
-      console.log(err);
-      res.end();
-    }
-    res.render('index', { title: 'Movie List', movieList: data });
-  });
-
-  
-});
 
 
 module.exports = router;
