@@ -10,18 +10,18 @@ Date: 10/8/2020
 
 /* Module dependencies. */
 
-var app = require('./config/app');
-var debug = require('debug')('lesson2b:server');
-var http = require('http');
+let app = require('./server/config/app');
+let debug = require('debug')('personalporfolio');
+let http = require('http');
 
 /* Get port from environment and store in Express. */
 
-var port = normalizePort(process.env.PORT || '3000');
+let port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /* Creates HTTP server. */
 
-var server = http.createServer(app);
+let server = http.createServer(app);
 
 /* Listens on provided port, on all network interfaces. */
 

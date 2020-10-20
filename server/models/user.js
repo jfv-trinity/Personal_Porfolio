@@ -1,0 +1,39 @@
+/* 
+File name: movie.js
+Student Name: Joseph Volpe
+StudentID: 301118010
+Date: 10/8/2020
+*/
+
+let mongoose = require('mongoose');
+let passportLocalMongoose = require('passport-local-mongoose');
+let Schema = mongoose.Schema;
+let Model = mongoose.model;
+
+let UserSchema = Schema({
+   username: String,
+   //password: string,
+   email: String,
+   displayName: String,
+   created: 
+   {
+        type: Date,
+        default: Date.now()
+   },
+   updated:
+   {
+       type: Date,
+       default: Date.now()
+   }
+},
+{
+    collection: 'users'
+});
+
+// configure options for User Model
+
+let options = ({missingPasswordError: 'Wrong / Missing Password'});
+
+UserSchema.plugin(passportLocalMongoose, options);
+
+module.exports.Model = Model('User', UserSchema);
