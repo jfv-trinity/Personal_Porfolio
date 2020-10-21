@@ -4,7 +4,7 @@ let passport = require('passport');
 
 // connect the user model
 let userModel = require('../models/user');
-let User = userModel.User; // alias
+let User = userModel.Model; // alias
 
 module.exports.DisplayHomePage = (req, res, next) => {
 

@@ -37,10 +37,15 @@
           <li class="nav-item active">
             <a class="nav-link" href="/services"><i class="fas fa-border-all fa-lg"></i> Services </a>
           </li>
-
+          
+          <% if(typeof displayName == 'string' && displayName) { %>
           <li class="nav-item active">
-            <a class="nav-link" href="/component-list"><i class="fas fa-laptop"></i> Components </a>
+            <a class="nav-link" href="/component-list"><i class="far fa-address-book fa-lg"></i></i> Contact List </a>
           </li>
+          <% } else { %>
+            <li class="nav-item active">
+              <a class="nav-link" href="/login"><i class="far fa-address-book fa-lg"></i></i> Contact List </a>
+          <% } %>
 
           <li class="nav-item active">
             <a class="nav-link" href="/contact"><i class="fas fa-phone fa-lg"></i> Contact </a>
