@@ -8,7 +8,7 @@ let BusinessSchema= new Schema({
     email: String,
 },
 {
-    collection: 'business_contacts'
+    collection: 'contacts'
 });
 
 module.exports.Model = Model('Business_contacts', BusinessSchema);
