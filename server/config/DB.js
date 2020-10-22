@@ -8,7 +8,8 @@ Date: 10/8/2020
 module.exports = 
 {
     //"URI": "mongodb://localhost/user_collection",
-    "URI": "mongodb+srv://Trinity:qhD8kXtfU3VQxQ8n@mongodbserver.jdec2.mongodb.net/business_contacts?retryWrites=true&w=majority"
+   // "URI": "mongodb+srv://Trinity:qhD8kXtfU3VQxQ8n@mongodbserver.jdec2.mongodb.net/business_contacts?retryWrites=true&w=majority"
+     "URI": "mongodb+srv://Trinity:TCLA7Szw2rjJd957@mongodbserver.fodob.mongodb.net/Website_Contacts?retryWrites=true&w=majority"
     
 }
 
