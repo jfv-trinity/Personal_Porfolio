@@ -6,6 +6,10 @@ let passport = require('passport');
 let userModel = require('../models/user');
 let User = userModel.Model; // alias
 
+//connect the business model
+let businessModel = require('../models/business');
+let Business = businessModel.Model;
+
 module.exports.DisplayHomePage = (req, res, next) => {
 
     console.log("Home Page Controller");
@@ -77,7 +81,7 @@ module.exports.ProcessLoginPage = (req, res, next) => {
         return next(err);
       }
 
-      return res.redirect('/component-list')
+      return res.redirect('/business-list')
     });
   })(req, res, next);
 }
