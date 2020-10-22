@@ -3,18 +3,18 @@ let router = express.Router();
 
 let mongoose = require('mongoose');
 
-let Buisness = require('../models/buisness');
+let Business = require('../models/business');
 
-module.exports.DisplayBuisnessList = (req, res, next) => {
+module.exports.DisplayBusinessList = (req, res, next) => {
   
-    Buisness.Model.find( (err, data) => {
+    Business.Model.find( (err, data) => {
       if(err)
       {
         console.error(err);
         res.end()
       }
   
-      res.render('index', { title: 'Buisness List', buisness_contacts: data ,
+      res.render('index', { title: 'Business List', business_contacts: data ,
       displayName: req.user ? req.user.displayName : ''});
     });
     
@@ -27,19 +27,19 @@ module.exports.DisplayAddPage = (req, res, next)=> {
 module.exports.ProcessAddPage = (req, res, next)=> {
 
     // instantiate a new object of type Component
-    let buisness = Buisness.Model({
+    let business = Business.Model({
         "name":req.body.name,
         "number": req.body.number,
         "email": req.body.email,
     });
 
-    Buisness.Model.create(buisness, (err, Buisness) => {
+    Business.Model.create(business, (err, Business) => {
         if(err)
         {
             console.log(err);
             res.end(err);
         }
-        res.redirect('/buisness-list');
+        res.redirect('/business-list');
     });
 }
 
@@ -47,14 +47,14 @@ module.exports.DisplayEditPage = (req, res, next)=> {
     let id = req.params.id;
 
     // pass id to the db 
-    Buisness.Model.findById(id, (err, BuisnessToEdit) => {
+    Business.Model.findById(id, (err, BusinessToEdit) => {
         if(err)
         {
             console.log(err);
             res.end(err);
         }
         // show the edit view
-        res.render('index', { title: 'Edit Contacts', data: BuisnessToEdit,
+        res.render('index', { title: 'Edit Contacts', data: BusinessToEdit,
         displayName: req.user ? req.user.displayName : '' });
     });
 }
@@ -63,32 +63,32 @@ module.exports.ProcessEditPage = (req, res, next)=> {
     let id = req.params.id;
 
      // instantiate a new object of type Component
-     let updateBuisness = Buisness.Model({
+     let updateBusiness = Business.Model({
         "_id": id, 
         "name":req.body.name,
         "number": req.body.number,
         "email": req.body.email,
     });
 
-    Buisness.Model.updateOne({_id: id}, updateBuisness, (err) => {
+    Business.Model.updateOne({_id: id}, updateBusiness, (err) => {
         if(err)
         {
             console.log(err);
             res.end(err);
         }
-        res.redirect('/buisness-list');
+        res.redirect('/business-list');
     });
 }
 
 module.exports.ProcessDeletePage = (req, res, next)=> {
     let id = req.params.id;
 
-    Buisness.Model.remove({_id: id}, (err) => {
+    Business.Model.remove({_id: id}, (err) => {
         if(err)
         {
             console.log(err);
             res.end(err);
         }
-        res.redirect('/buisness-list');
+        res.redirect('/business-list');
     });
 }

@@ -2,13 +2,13 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema; // alias
 let Model = mongoose.model; // alias
 
-let BuisnessSchema= new Schema({
+let BusinessSchema= new Schema({
     name: String,
     number: Number,
     email: String,
 },
 {
-    collection: 'buisness_contacts'
+    collection: 'business_contacts'
 });
 
-module.exports.Model = Model('Buisness_contacts', BuisnessSchema);
+module.exports.Model = Model('Business_contacts', BusinessSchema);

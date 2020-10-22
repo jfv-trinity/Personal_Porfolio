@@ -1,5 +1,5 @@
 {
-  "name": "assignment-1",
+  "name": "assignment-2",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -31,7 +31,7 @@
     "popper.js": "^1.16.1",
     "server": "^1.0.30"
   },
-  "description": "Assignment-1/Personal Porfolio for COMP 229",
+  "description": "Assignment-2/Personal Porfolio for COMP 229",
   "main": "server.js",
   "devDependencies": {
     "@types/connect-flash": "0.0.35",

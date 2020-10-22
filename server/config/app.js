@@ -31,14 +31,14 @@ let indexRouter = require('../routes/server');
 let componentRouter = require('../routes/component');
 let usersRouter = require('../routes/users');
 let user_collectionRouter = require('../routes/user_collection');
-let buisness_contactsRouter = require('../routes/buisness');
+let business_contactsRouter = require('../routes/business');
 
 let app = express();
 
 let mongoose = require('mongoose');
 let DB = require('./DB');
 
-mongoose.connect(DB.URL, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
 let dbConnection = mongoose.connection; // alias
 
 dbConnection.on('error', console.error.bind(console, 'connection error:'));
@@ -99,7 +99,7 @@ app.use('/', indexRouter);
 app.use('/component-list', componentRouter);
 app.use('/users', usersRouter);
 app.use('/user-list', user_collectionRouter);
-app.use('/buisness-list', buisness_contactsRouter);
+app.use('/business-list', business_contactsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
