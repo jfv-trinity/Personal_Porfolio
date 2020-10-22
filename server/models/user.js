@@ -1,8 +1,8 @@
 /* 
-File name: movie.js
+File name: user.js
 Student Name: Joseph Volpe
 StudentID: 301118010
-Date: 10/8/2020
+Date: 10/21/2020
 */
 
 let mongoose = require('mongoose');
@@ -27,7 +27,7 @@ let UserSchema = Schema({
    }
 },
 {
-    collection: 'users'
+    collection: 'user_collection'
 });
 
 // configure options for User Model

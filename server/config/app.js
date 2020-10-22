@@ -30,6 +30,8 @@ let user = require('../models/user')
 let indexRouter = require('../routes/server');
 let componentRouter = require('../routes/component');
 let usersRouter = require('../routes/users');
+let user_collectionRouter = require('../routes/user_collection');
+let buisness_contactsRouter = require('../routes/buisness');
 
 let app = express();
 
@@ -96,6 +98,8 @@ passport.deserializeUser(User.deserializeUser());
 app.use('/', indexRouter);
 app.use('/component-list', componentRouter);
 app.use('/users', usersRouter);
+app.use('/user-list', user_collectionRouter);
+app.use('/buisness-list', buisness_contactsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

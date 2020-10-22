@@ -1,16 +1,12 @@
-
 <%- include('./partials/header.ejs') -%>
-    
 
-    
-<div class="container">
+    <div class="container">
 
-  <div class="jumbotron">
-    <h1 class="display-4"><%= title %></h1>
-</div>
-      
+        <div class="jumbotron">
+          <h1 class="display-4"><%= title %></h1>
+          
+      </div>
 
-      <!-- Additional Content goes here -->
       <% if(title == 'Component List') { %>
         <%- include('./content/component-list.ejs') -%> 
       <% } else if(title == 'Add Component') { %>
@@ -18,10 +14,19 @@
       <% } else if(title == 'Edit Component') { %>
         <%- include('./content/edit-component.ejs') -%> 
       <% } %>
-      
-    </main>
-    
+
+      <% if(title == 'Buisness List') { %>
+        <%- include('./content/buisness-list.ejs') -%> 
+      <% } else if(title == 'Add Contact') { %>
+        <%- include('./content/add-buisness.ejs') -%> 
+      <% } else if(title == 'Edit Contact') { %>
+        <%- include('./content/edit-buisness.ejs') -%> 
+      <% } %>
+
+    </div>
+
     <%- include('./partials/bottomnav.ejs') -%>
 <%- include('./partials/footer.ejs') -%>
+    
 
-   
+    
