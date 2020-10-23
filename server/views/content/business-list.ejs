@@ -17,11 +17,11 @@
         <tbody>
 
           <% for(let count=0; count < business_contacts.length; count++) { %>
-
           <tr>
             <td><%= business_contacts[count].name %></td>
             <td><%= business_contacts[count].number %></td>
             <td><%= business_contacts[count].email %></td>
+           
             <td>
               <a href="/business-list/edit/<%= business_contacts[count]._id %>" class="btn btn-primary btn-sm">
                   <i class="fas fa-edit"></i> Edit</a>
@@ -29,11 +29,12 @@
             <td>
                 <a href="/business-list/delete/<%= business_contacts[count]._id %>" class="btn btn-danger btn-sm">
                     <i class="fas fa-trash-alt"></i> Delete</a>
+                    
             </td>
           </tr>
           
         <% } %>
-
+        
         </tbody>
       </table>
 

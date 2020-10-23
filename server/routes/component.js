@@ -1,5 +1,19 @@
 let express = require('express');
 let router = express.Router();
+let moongoose = require('mongoose');
+
+let passport = require('passport');
+
+//helper function for authentication guard
+function requiredAuth(req, res, next)
+{
+    //check if user is logged in
+    if(!req.isAuthenticated())
+    {
+        return res.redirect('/login');
+    }
+    next();
+}
 
 let componentController = require('../controllers/component');
 
@@ -7,19 +21,19 @@ let componentController = require('../controllers/component');
 router.get('/', componentController.DisplayComponentList);
   
 /* GET Display Add page. CREATE  */
-router.get('/add', componentController.DisplayAddPage);
+router.get('/add', requiredAuth, componentController.DisplayAddPage);
 
 /* POST process the Add page. CREATE */
-router.post('/add', componentController.ProcessAddPage);
+router.post('/add', requiredAuth, componentController.ProcessAddPage);
 
 /* GET Display Edit page. UPDATE */
-router.get('/edit/:id', componentController.DisplayEditPage);
+router.get('/edit/:id', requiredAuth, componentController.DisplayEditPage);
 
 /* POST process the Edit page. UPDATE */
-router.post('/edit/:id', componentController.ProcessEditPage);
+router.post('/edit/:id', requiredAuth, componentController.ProcessEditPage);
 
 /* GET process the Delete page. DELETE */
-router.get('/delete/:id', componentController.ProcessDeletePage);
+router.get('/delete/:id', requiredAuth, componentController.ProcessDeletePage);
 
 
 module.exports = router;
