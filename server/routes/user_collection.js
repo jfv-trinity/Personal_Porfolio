@@ -1,3 +1,10 @@
+/* 
+File name: user_collection.js
+Student Name: Joseph Volpe
+StudentID: 301118010
+Date: 10/22/2020
+*/
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');

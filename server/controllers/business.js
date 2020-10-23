@@ -1,3 +1,10 @@
+/* 
+File name: business.js
+Student Name: Joseph Volpe
+StudentID: 301118010
+Date: 10/22/2020
+*/
+
 let express = require('express');
 let router = express.Router();
 
@@ -13,11 +20,12 @@ module.exports.DisplayBusinessList = (req, res, next) => {
         console.error(err);
         res.end()
       }
-  
-      res.render('index', { title: 'Business List', business_contacts: data ,
+
+      sorted_data = data.sort((a, b) => a.name > b.name ? 1 : -1)
+
+      res.render('index', { title: 'Business List', business_contacts: sorted_data ,
       displayName: req.user ? req.user.displayName : ''});
     });
-    
   }
 
 module.exports.DisplayAddPage = (req, res, next)=> {

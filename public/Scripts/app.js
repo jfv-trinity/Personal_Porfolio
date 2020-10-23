@@ -1,3 +1,10 @@
+/* 
+File name: app.js
+Student Name: Joseph Volpe
+StudentID: 301118010
+Date: 10/22/2020
+*/
+
 // IIFE -- Immediately Invoked Function Expression
 (function(){
 

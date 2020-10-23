@@ -1,3 +1,10 @@
+/* 
+File name: business.js
+Student Name: Joseph Volpe
+StudentID: 301118010
+Date: 10/22/2020
+*/
+
 let express = require('express');
 let router = express.Router();
 let moongoose = require('mongoose');
@@ -18,7 +25,7 @@ function requiredAuth(req, res, next)
 let businessController = require('../controllers/business');
 
 /* GET Component-list page. READ */
-router.get('/', businessController.DisplayBusinessList);
+router.get('/', requiredAuth, businessController.DisplayBusinessList);
   
 /* GET Display Add page. CREATE  */
 router.get('/add', requiredAuth, businessController.DisplayAddPage);
