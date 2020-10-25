@@ -1,3 +1,10 @@
+/* 
+File name: business.js
+Student Name: Joseph Volpe
+StudentID: 301118010
+Date: 10/22/2020
+*/
+
 let mongoose = require('mongoose');
 let Schema = mongoose.Schema; // alias
 let Model = mongoose.model; // alias

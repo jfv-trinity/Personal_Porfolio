@@ -5,12 +5,15 @@ StudentID: 301118010
 Date: 10/22/2020
 */
 
-
+//module for errors & logs
 let createError = require('http-errors');
+let logger = require('morgan');
+
+//module for pathing and data
 let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
-let logger = require('morgan');
+
 
 // modules for authentication
 let session = require('express-session');
@@ -33,11 +36,12 @@ let usersRouter = require('../routes/users');
 let user_collectionRouter = require('../routes/user_collection');
 let business_contactsRouter = require('../routes/business');
 
+//Modules for databases
 let app = express();
-
 let mongoose = require('mongoose');
 let DB = require('./DB');
 
+//Console logs connection status
 mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
 let dbConnection = mongoose.connection; // alias
 
@@ -63,6 +67,7 @@ dbConnection.on('reconnected', ()=>{
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
+//Initializing Modules for site
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -94,7 +99,7 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
+//Initializing Routes
 app.use('/', indexRouter);
 app.use('/component-list', componentRouter);
 app.use('/users', usersRouter);
